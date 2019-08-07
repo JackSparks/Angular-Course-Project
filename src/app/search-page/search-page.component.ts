@@ -7,6 +7,8 @@ import { ProductService } from "../services/product-service.service";
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
+  productId: number;
+  productDescriptionEnglish: string;
 
   constructor(private service: ProductService) { }
 
@@ -16,5 +18,8 @@ export class SearchPageComponent implements OnInit {
   getProducts(){
     this.service.get();
   }
+
+  search(){}
+  
 
 }

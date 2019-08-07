@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {ProductsAvailableComponent} from './products-available/products-available.component';
 import {AddProductComponent} from './add-product/add-product.component';
 import {SearchPageComponent} from './search-page/search-page.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: ProductsAvailableComponent },
@@ -12,7 +13,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [
+    FormsModule,
+    RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

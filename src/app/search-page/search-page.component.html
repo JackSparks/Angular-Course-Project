@@ -6,23 +6,23 @@
   
       <div class="form-row">
         <!-- <p>Product Description English</p> -->
-        <input type="text" class="form-control" placeholder="Product ID">
+        <input type="text" class="form-control" name="productID" placeholder="Product ID" [(ngModel)]="productId">
       </div>
   
       <div class="form-row">
         <!-- <p>Product Description French</p> -->
-        <input type="text" class="form-control" placeholder="Product Description">
+        <input type="text" class="form-control" name="productDescriptionEnglish" placeholder="Product Description" [(ngModel)]="productDescriptionEnglish">
       </div>
 
       <div class="text-center">
-          <button class="btn btn-outline-warning btn-sm btn-rounded" type="cancel">Reset</button>
-          &nbsp;
-          <button class="btn btn-outline-success btn-sm btn-rounded" type="submit" (submit)="getProducts()">Search Products</button>
+          <!-- <button class="btn btn-outline-warning btn-sm btn-rounded" type="cancel">Reset</button> -->
+          <!-- &nbsp; -->
+          <button class="btn btn-outline-success btn-sm btn-rounded" type="submit" id="submit" name="submit" (submit)="getProducts()">Search Products</button>
         </div>
 
 </form>
 
-<tbody>
+<!-- <tbody>
   <tr *ngFor="let product of products">
     <td class="mdl-data-table__cell--non-numeric">{{english_description}}</td>
     <td class="mdl-data-table__cell--non-numeric">{{french_description}}</td>
@@ -31,9 +31,10 @@
     <td class="mdl-data-table__cell--non-numeric">{{type}}</td>
     <td class="mdl-data-table__cell--non-numeric">{{identification}}</td>
     <td class="mdl-data-table__cell--non-numeric">{{img_url}}</td>
-    <td class="mdl-data-table__cell--non-numeric">{{status}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{status}}</td> -->
+
     <!-- <td style="padding-top: 6px;">
       <button class="mdl-button" (click)="remove(symbol)">Remove</button> -->
     
-  </tr>
-</tbody>
+  <!-- </tr>
+</tbody> -->
