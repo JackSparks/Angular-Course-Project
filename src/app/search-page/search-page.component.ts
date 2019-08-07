@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from "../services/product-service.service";
 
 @Component({
   selector: '[app-search-page]',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ProductService) { }
 
   ngOnInit() {
+  }
+
+  getProducts(){
+    this.service.get();
   }
 
 }

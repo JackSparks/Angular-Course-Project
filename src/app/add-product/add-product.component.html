@@ -70,27 +70,27 @@
 
     <div class="form-row">
       <!-- <p>Product Description English</p> -->
-      <input type="text" class="form-control" required placeholder="Product English*">
+      <input type="text" class="form-control" [(ngModel)]="english_description" required placeholder="Product English*" name="english_description">
     </div>
 
     <div class="form-row">
       <!-- <p>Product Description French</p> -->
-      <input type="text" class="form-control" required placeholder="Product French*">
+      <input type="text" class="form-control" [(ngModel)]="french_description" required placeholder="Product French*" name="french_description">
     </div>
 
     <div class="form-row">
       <!-- <p>Brand Name English</p> -->
-      <input type="text" class="form-control" required placeholder="Branc Name English*">
+      <input type="text" class="form-control" [(ngModel)]="brand_name_english" required placeholder="Brand Name English*" name="brand_name_english">
     </div>
 
     <div class="form-row">
-        <!-- <p>Brand Name English</p> -->
-        <input type="text" class="form-control" required placeholder="Brand Name French*">
+        <!-- <p>Brand Name French</p> -->
+        <input type="text" class="form-control" [(ngModel)]="brand_name_french" required placeholder="Brand Name French*" name="brand_name_french">
       </div>
 
     <div class="form-row">
       <!-- <p>Product Type</p> -->
-      <select class="form-control" required >
+      <select class="form-control" [(ngModel)]="type" required name="type">
           <option value="" disabled selected>Product Type*</option>
         <option value="type1">type1</option>
         <option value="type2">type2</option>
@@ -100,12 +100,12 @@
 
     <div class="form-row">
       <!-- <p>Additional Product Identification</p> -->
-      <input type="text" class="form-control" required placeholder="Additional Product Identification*">
+      <input type="text" class="form-control" [(ngModel)]="identification" required placeholder="Additional Product Identification*" name="identification">
     </div>
 
     <div class="form-row">
       <!-- <p>Target Market</p> -->
-      <select class="form-control" required>
+      <select class="form-control" [(ngModel)]="english_description" required name="english_description">
           <option value="" disabled selected>Target Market*</option>
         <option value="market1">market1</option>
         <option value="market2">market2</option>
@@ -115,12 +115,12 @@
 
     <div class="form-row">
       <!-- <p>Product Image url:</p> -->
-      <input type="text" class="form-control" required placeholder="Product img URL*">
+      <input type="text" class="form-control" [(ngModel)]="img_url" required placeholder="Product img URL*" name="img_url">
     </div>
 
     <div class="form-row">
       <!-- <p>Status</p> -->
-      <select class="form-control" required>
+      <select class="form-control" [(ngModel)]="status" required name="status">
           <option value="" disabled selected>Status*</option>
         <option value="status1">status1</option>
         <option value="status2">status2</option>
@@ -131,7 +131,7 @@
     <div class="text-center">
       <button class="btn btn-outline-warning btn-sm btn-rounded" type="cancel">Cancel</button>
       &nbsp;
-      <button class="btn btn-outline-success btn-sm btn-rounded" type="submit">Submit form</button>
+      <button class="btn btn-outline-success btn-sm btn-rounded" type="submit" (submit)="addNewProduct()">Submit form</button>
     </div>
 
   </form>

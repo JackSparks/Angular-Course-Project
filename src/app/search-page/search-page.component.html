@@ -17,7 +17,23 @@
       <div class="text-center">
           <button class="btn btn-outline-warning btn-sm btn-rounded" type="cancel">Reset</button>
           &nbsp;
-          <button class="btn btn-outline-success btn-sm btn-rounded" type="submit">Search Products</button>
+          <button class="btn btn-outline-success btn-sm btn-rounded" type="submit" (submit)="getProducts()">Search Products</button>
         </div>
 
 </form>
+
+<tbody>
+  <tr *ngFor="let product of products">
+    <td class="mdl-data-table__cell--non-numeric">{{english_description}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{french_description}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{brand_name_english}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{brand_name_french}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{type}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{identification}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{img_url}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{status}}</td>
+    <!-- <td style="padding-top: 6px;">
+      <button class="mdl-button" (click)="remove(symbol)">Remove</button> -->
+    
+  </tr>
+</tbody>
