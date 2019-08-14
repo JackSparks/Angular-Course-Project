@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false, 
-  baseUrl: 'http://paragas.com/products-ut-wo-db/rest'
+  baseUrl: 'http://paragas.com/products-ut-wo-db/rest' 
 };
 
 /*
