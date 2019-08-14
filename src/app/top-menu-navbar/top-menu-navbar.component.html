@@ -1,43 +1,20 @@
-<div class="row bg-dark ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">COMP425 Project</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-
-
-  <div class="float-right ">
-    <!-- <small>
-        <span>
-            {{ cart.itemCount }} item(s)
-            {{ cart.cartPrice | currency: "USD" : "symbol" : "2.2-2" }}
-        </span>
-    </small> -->
-    <!-- disabled by default so you can only go to the cart if there is an item in it -->
-    <!-- <button class="btn  bg-dark text-white">
-      Home
-    </button>
-    <button class="btn  bg-dark text-white">
-      Add Product
-    </button>
-    <button class="btn  bg-dark text-white">
-      Search Product
-    </button> -->
-
-    <div class="container">
-      <div class="row">
-          <div class="col-4">
-            <a href="#/products-available">Home</a>
-          </div>
-          <div class="col-4">
-            <a href="#/add-product">Add Product</a>
-          </div>
-          <div class="col-4">
-            <a href="#/search-product">Search Products</a>
-          </div>
-      </div>
-    </div>
-
-
-
-    <!-- <button class="btn btn-sm bg-dark text-white" [disabled]="cart.itemCount == 0" routerLink="/cart">
-    <i class="fa fa-shopping-cart"></i>
-  </button> -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#/products-available">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#/add-product">Add Product</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#/search-product">Search Products</a>
+      </li>
+    </ul>
   </div>
-</div>
+</nav>
