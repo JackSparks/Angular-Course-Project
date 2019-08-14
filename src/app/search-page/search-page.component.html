@@ -14,10 +14,12 @@
         <input type="text" class="form-control" name="productDescriptionEnglish" placeholder="Product Description" [(ngModel)]="productDescriptionEnglish">
       </div>
 
-      <div class="text-center">
+      <div class="col-12">
+        <br/>
+        <input (click)="search()" type="submit" id="submit" class="Ybutton" name="submit" value="Search">
           <!-- <button class="btn btn-outline-warning btn-sm btn-rounded" type="cancel">Reset</button> -->
           <!-- &nbsp; -->
-          <button class="btn btn-outline-success btn-sm btn-rounded" type="submit" id="submit" name="submit" (submit)="getProducts()">Search Products</button>
+         
         </div>
 
 </form>
