@@ -12,6 +12,7 @@ export interface product {
   identification: string;
   img_url: string;
   status: string;
+  target_market: string;
 }
 
 @Injectable({

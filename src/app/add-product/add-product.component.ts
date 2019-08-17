@@ -41,7 +41,8 @@ export class AddProductComponent implements OnInit {
     type : '',
     identification : '',
     img_url : '',
-    status : ''
+    status : '',
+    target_market : ''
 
   }
 
