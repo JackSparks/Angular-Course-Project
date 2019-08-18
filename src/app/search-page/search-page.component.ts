@@ -7,7 +7,7 @@ import { ProductService, product } from "../services/product-service.service";
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
-  productId: number;
+  productId: string;
   productDescriptionEnglish: string;
   products = [];
 
@@ -21,13 +21,38 @@ export class SearchPageComponent implements OnInit {
   }
 
   search(){
-    this.service.getProducts().subscribe((results) => {
-      this.products = [];
-      for(let result of results) {
-        this.products.push(result);
-      }      
-    });
+    if ((this.productId != null && this.productId != "") && (this.productDescriptionEnglish != null && this.productDescriptionEnglish != "")){
+      this.service.getProductsByIdAndProductDescription(this.productId, this.productDescriptionEnglish).subscribe((results) => {
+        this.products = [];
+        for(let result of results) {
+          this.products.push(result);
+        }      
+      });
+    }
+    else if ((this.productId != null && this.productId != "") && (this.productDescriptionEnglish == null || this.productDescriptionEnglish == "")){
+      this.service.getProductsById(this.productId).subscribe((results) => {
+        this.products = [];
+        for(let result of results) {
+          this.products.push(result);
+        }      
+      });
+    }
+    else if ((this.productId == null || this.productId == "") && (this.productDescriptionEnglish != null && this.productDescriptionEnglish != "")){
+      this.service.getProductsByProductDescription(this.productDescriptionEnglish).subscribe((results) => {
+        this.products = [];
+        for(let result of results) {
+          this.products.push(result);
+        }      
+      });
+    }
+    else{ //No id or description provided
+      this.service.getProducts().subscribe((results) => {
+        this.products = [];
+        for(let result of results) {
+          this.products.push(result);
+        }      
+      });
+    }
   }
-  
 
 }

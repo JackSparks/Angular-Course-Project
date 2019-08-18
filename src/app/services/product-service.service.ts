@@ -38,11 +38,15 @@ export class ProductService {
   }
 
   getProductsById(id) {
-    return this.httpClient.get<product[]>(`${this.apiURL}/`);
+    return this.httpClient.get<product[]>(`${this.apiURL}/product/${id}`);
   }
 
   getProductsByProductDescription(description) {
-    return this.httpClient.get<product[]>(`${this.apiURL}/`);
+    return this.httpClient.get<product[]>(`${this.apiURL}/product/${description}`);
+  }
+
+  getProductsByIdAndProductDescription(id, description) {
+    return this.httpClient.get<product[]>(`${this.apiURL}/product/${id}/productIdAndProductDescriptionEnglish/${description}`);
   }
 
   add(product){
