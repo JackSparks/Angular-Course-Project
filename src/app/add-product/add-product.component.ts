@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService, product } from "../services/product-service.service";
-import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MustMatch } from '../_helpers/must-match.validator';
+
 
 @Component({
   selector: '[app-add-product]',
@@ -10,16 +12,19 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 export class AddProductComponent implements OnInit {
 
-  title = 'Angular Form Validation Tutorial';
-   angForm: FormGroup;
+  registerForm: FormGroup;
+  submitted = false;
 
-   createForm() {
+  title = 'Add Product';
+  angForm: FormGroup;
+
+  createForm() {
     this.angForm = this.fb.group({
-       name: ['', Validators.required ]
+      name: ['', Validators.required]
     });
   }
 
-  constructor(private service: ProductService, private fb: FormBuilder) { 
+  constructor(private service: ProductService, private fb: FormBuilder, private formBuilder: FormBuilder) {
     this.createForm();
   }
 
@@ -43,28 +48,64 @@ export class AddProductComponent implements OnInit {
     //   }, false);
     // })();
 
+    /////////////////////////
+    this.registerForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required],
+
+      //////////////
+      english_description: ['', Validators.required],
+      french_description: ['', Validators.required],
+      brand_name_english: ['', Validators.required],
+      brand_name_french: ['', Validators.required],
+      type: ['', Validators.required],
+      identification: ['', Validators.required],
+      img_url: ['', Validators.required],
+      status: ['', Validators.required],
+      target_market: ['', Validators.required]
+    }, {
+        // validator: MustMatch('password', 'confirmPassword')
+      });
+
   }
 
-  newProduct: product = {
+  // convenience getter for easy access to form fields
+  get f() { return this.registerForm.controls; }
 
-    english_description : '',
-    french_description : '',
-    brand_name_english : '',
-    brand_name_french : '',
-    type : '',
-    identification : '',
-    img_url : '',
-    status : '',
-    target_market : ''
+  onSubmit() {
+    this.submitted = true;
 
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
   }
+
+  // newProduct: product = {
+
+  //   english_description: '',
+  //   french_description: '',
+  //   brand_name_english: '',
+  //   brand_name_french: '',
+  //   type: '',
+  //   identification: '',
+  //   img_url: '',
+  //   status: '',
+  //   target_market: ''
+
+  // }
 
   addNewProduct() {
-    this.service.add(this.newProduct);
+    // this.service.add(this.newProduct);
   }
 
-  
-  
+
+
 }
 
 
