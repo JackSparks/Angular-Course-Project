@@ -16,6 +16,7 @@ export interface product {
   target_market: string;
 }
 
+
 export interface available_and_used_products {
   availableProducts: number;
   unusedProducts: number;
@@ -48,7 +49,7 @@ export class ProductService {
   }
 
   getProductsByProductDescription(description) {
-    return this.httpClient.get<product[]>(`${this.apiURL}/product/${description}`);
+    return this.httpClient.get<product[]>(`${this.apiURL}/product/productDescriptionEnglish/${description}`);
   }
 
   getProductsByIdAndProductDescription(id, description) {
@@ -56,7 +57,7 @@ export class ProductService {
   }
 
   getAvailableAndUsedProducts(){
-    return this.httpClient.get<available_and_used_products[]>(`${this.apiURL}/availableProducts`);
+    return this.httpClient.get<available_and_used_products>(`${this.apiURL}/availableProducts`);
   }
 
   add(product){

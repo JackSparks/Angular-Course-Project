@@ -24,30 +24,28 @@ export class SearchPageComponent implements OnInit {
     if ((this.productId != null && this.productId != "") && (this.productDescriptionEnglish != null && this.productDescriptionEnglish != "")){
       this.service.getProductsByIdAndProductDescription(this.productId, this.productDescriptionEnglish).subscribe((results) => {
         this.products = [];
-        for(let result of results) {
-          this.products.push(result);
-        }      
+        console.log("1: results", results);
+        this.products.push(results);
       });
     }
     else if ((this.productId != null && this.productId != "") && (this.productDescriptionEnglish == null || this.productDescriptionEnglish == "")){
       this.service.getProductsById(this.productId).subscribe((results) => {
         this.products = [];
-        for(let result of results) {
-          this.products.push(result);
-        }      
+        console.log("2: results", results);
+        this.products.push(results);
       });
     }
     else if ((this.productId == null || this.productId == "") && (this.productDescriptionEnglish != null && this.productDescriptionEnglish != "")){
       this.service.getProductsByProductDescription(this.productDescriptionEnglish).subscribe((results) => {
         this.products = [];
-        for(let result of results) {
-          this.products.push(result);
-        }      
+        console.log("3: results", results);
+        this.products.push(results[0]);
       });
     }
     else{ //No id or description provided
       this.service.getProducts().subscribe((results) => {
         this.products = [];
+        console.log("4: results", results);
         for(let result of results) {
           this.products.push(result);
         }      
