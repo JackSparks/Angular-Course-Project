@@ -16,6 +16,12 @@ export interface product {
   target_market: string;
 }
 
+export interface available_and_used_products {
+  availableProducts: number;
+  unusedProducts: number;
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -47,6 +53,10 @@ export class ProductService {
 
   getProductsByIdAndProductDescription(id, description) {
     return this.httpClient.get<product[]>(`${this.apiURL}/product/${id}/productIdAndProductDescriptionEnglish/${description}`);
+  }
+
+  getAvailableAndUsedProducts(){
+    return this.httpClient.get<available_and_used_products[]>(`${this.apiURL}/availableProducts`);
   }
 
   add(product){
