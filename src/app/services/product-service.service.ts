@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 let products: Array<product> = [];
 
@@ -20,10 +21,28 @@ export interface product {
 })
 export class ProductService {
 
-  constructor() { }
+  apiURL: string = environment.baseUrl;
+  public firstPage: string = "";
+  public prevPage: string = "";
+  public nextPage: string = "";
+  public lastPage: string = "";
+
+  constructor(private httpClient: HttpClient) { }
 
   get() {
     return products.slice();
+  }
+
+  getProducts() {
+    return this.httpClient.get<product[]>(`${this.apiURL}/products`);
+  }
+
+  getProductsById(id) {
+    return this.httpClient.get<product[]>(`${this.apiURL}/`);
+  }
+
+  getProductsByProductDescription(description) {
+    return this.httpClient.get<product[]>(`${this.apiURL}/`);
   }
 
   add(product){

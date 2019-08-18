@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false, 
-  baseUrl: 'http://localhost:8080/products-ut-wo-db/rest'
-  //baseUrl: 'http://paragas.com/products-ut-wo-db/rest' 
+  baseUrl: 'http://paragas.com/products-ut-wo-db/rest' 
 };
+  //baseUrl: 'http://localhost:8080/products-ut-wo-db/rest'
 
 /*
  * For easier debugging in development mode, you can import the following file

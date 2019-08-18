@@ -24,19 +24,35 @@
 
 </form>
 
-<!-- <tbody>
+<table class="table">
+  <thead class="thead-dark" *ngIf="products?.length">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Product Description English</th>
+      <th scope="col">Product Description French</th>
+      <th scope="col">Brand Name English</th>
+      <th scope="col">Brand Name French</th>
+      <th scope="col">Product Type</th>
+      <th scope="col">Additional Product Identification</th>
+      <th scope="col">Target Market</th>
+      <th scope="col">Product Image URL</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
   <tr *ngFor="let product of products">
-    <td class="mdl-data-table__cell--non-numeric">{{english_description}}</td>
-    <td class="mdl-data-table__cell--non-numeric">{{french_description}}</td>
-    <td class="mdl-data-table__cell--non-numeric">{{brand_name_english}}</td>
-    <td class="mdl-data-table__cell--non-numeric">{{brand_name_french}}</td>
-    <td class="mdl-data-table__cell--non-numeric">{{type}}</td>
-    <td class="mdl-data-table__cell--non-numeric">{{identification}}</td>
-    <td class="mdl-data-table__cell--non-numeric">{{img_url}}</td>
-    <td class="mdl-data-table__cell--non-numeric">{{status}}</td> -->
+    <td scope="row">{{product.id}}</td>
+    <td>{{product.productDescriptionEnglish}}</td>
+    <td>{{product.productDescriptionFrench}}</td>
+    <td>{{product.brandNameEnglish}}</td>
+    <td>{{product.brandNameFrench}}</td>
+    <td>{{product.productType}}</td>
+    <td>{{product.additionalProductIdentification}}</td>
+    <td>{{product.targetMarket}}</td>
+    <td>{{product.productImageUrl}}</td>
+    <td>{{product.status}}</td>
 
     <!-- <td style="padding-top: 6px;">
       <button class="mdl-button" (click)="remove(symbol)">Remove</button> -->
     
-  <!-- </tr>
-</tbody> -->
+  </tr>
+</table>
