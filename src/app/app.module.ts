@@ -11,6 +11,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListProductComponent } from './list-product/list-product.component';
+import { CreateProductComponent } from './create-product/create-product.component'; //Soukhee Lee
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductsAvailableComponent,
     AddProductComponent,
     FooterComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    ListProductComponent,
+    CreateProductComponent //Soukhee Lee
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,58 @@
+
+<hr>
+<div class="text-center">Add Products</div>
+
+
+<div class="container">
+  <form class="needs-validation" novalidate>
+
+    <div class="form-row">
+      <input type="text" class="form-control" [(ngModel)]="product.english_description" required placeholder="Product English*" name="english_description" id = "english_description" >
+    </div>
+
+    <div class="form-row">
+      <input type="text" class="form-control" [(ngModel)]="product.french_description" required placeholder="Product French*" name="french_description" id ="french_description" >
+    </div>
+
+    <div class="form-row">
+      <input type="text" class="form-control" [(ngModel)]="product.brand_name_english" required placeholder="Brand Name English*" name="brand_name_english" id = "brand_name_english">
+    </div>
+
+    <div class="form-row">
+        <input type="text" class="form-control" [(ngModel)]="product.brand_name_french" required placeholder="Brand Name French*" name="brand_name_french" id = "brand_name_french">
+      </div>
+
+
+
+    <div class="form-row">
+      <input type="text" class="form-control" [(ngModel)]="product.identification" required placeholder="Additional Product Identification*" name="identification" id= "identification">
+    </div>
+
+
+
+      
+    <div class="form-row">
+       <input type="file" class="form-control" [(ngModel)]="product.img_url" required placeholder="Product img URL*" name="img_url" id ="img_url">
+    </div>
+
+    <div class="form-row">
+      <select class="form-control" [(ngModel)]="product.status" required name="status" id="status">
+          <option value="" disabled selected>Status*</option>
+        <option value="01">Perfect Condition</option>
+        <option value="02">Demaged Condition</option>
+        <option value="03">Useless Condition</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <input type="text" class="form-control" [(ngModel)]="product.type" required placeholder="Product type*" name="type" id ="type">
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-outline-warning btn-sm btn-rounded" type="cancel">Cancel</button>
+      &nbsp;
+      <button class="btn btn-success" (click)="createProduct()">Create</button>
+    </div>
+
+  </form>
+</div>

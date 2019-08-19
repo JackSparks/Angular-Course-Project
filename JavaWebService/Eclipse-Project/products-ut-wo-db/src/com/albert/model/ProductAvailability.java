@@ -17,5 +17,4 @@ public class ProductAvailability {
 		this.unusedProducts = unusedProducts;
 	}
 	
-	
 }

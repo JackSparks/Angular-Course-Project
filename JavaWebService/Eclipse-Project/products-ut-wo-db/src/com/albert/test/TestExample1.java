@@ -26,6 +26,7 @@ import com.albert.model.Product;
 import com.albert.model.ProductAvailability;
 
 import static org.junit.Assert.*;
+
 public class TestExample1 
 {
 	public static final String SERVER_URI = "http://localhost:8080/products-ut-wo-db";
@@ -35,7 +36,8 @@ public class TestExample1
 	@Test
 	public void testGetProductAvailability() {
 		RestTemplate restTemplate = new RestTemplate();
-		ProductAvailability productAvailability = restTemplate.getForObject(SERVER_URI+"/rest/availableProducts", ProductAvailability.class);
+		ProductAvailability productAvailability = restTemplate
+				.getForObject(SERVER_URI+"/rest/availableProducts", ProductAvailability.class);
 		assertNotNull(productAvailability);
 	}
 	
@@ -62,7 +64,8 @@ public class TestExample1
 			ObjectMapper mapper = new ObjectMapper();
 			String jsonInString = mapper.writeValueAsString(product1);
 			System.out.println("jsonInString:"+jsonInString);
-			Product response = restTemplate.postForObject(SERVER_URI+ProductRestURIConstants.CREATE_PRODUCT, product1, Product.class);
+			Product response = restTemplate
+					.postForObject(SERVER_URI+ProductRestURIConstants.CREATE_PRODUCT, product1, Product.class);
 			assertNotNull(response);
 			printProductData(response);
 		}

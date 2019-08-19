@@ -1,0 +1,35 @@
+<hr>
+<div class="text-center">All Products</div>
+<div class="text-center">*All Products img goes here*</div>
+
+
+<div class="container">
+    
+
+    <table class="table table-sm table-dark">
+    <thead></thead>
+      <tr>
+        <th>Product ID</th>
+        <th>English Brand Name</th>
+        <th>French Brand Name</th>
+        <th>English Desc</th>
+        <th>French Desc</th>
+        <th>Type</th>
+        <th>Img URL</th>
+        <th>Status</th>
+    </tr>
+  
+  <tbody>
+      <tr *ngFor="let product of Products">
+          <td>{{product.identification}}</td>
+          <td>{{product.brand_name_english}}</td>
+          <td>{{product.brand_name_french}}</td>
+          <td>{{product.english_description}}</td>
+          <td>{{product.french_description}}</td>
+          <td>{{product.type}}</td>
+          <td>{{product.img_url}}</td>
+          <td>{{product.status}}</td>
+          </tr>
+  </tbody>
+  </table>
+</div>  

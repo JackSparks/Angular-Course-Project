@@ -240,6 +240,7 @@ public class ProductController {
 		productAvailability.setAvailableProducts(new Integer(54));
 		productAvailability.setUnusedProducts(new Integer(170));
 		return productAvailability;
+		
 	}
 	
 	

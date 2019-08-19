@@ -4,12 +4,18 @@ import {ProductsAvailableComponent} from './products-available/products-availabl
 import {AddProductComponent} from './add-product/add-product.component';
 import {SearchPageComponent} from './search-page/search-page.component';
 import { FormsModule } from '@angular/forms';
+/** Soukhee Lee */
+import {ListProductComponent} from './list-product/list-product.component'; 
+import {CreateProductComponent} from './create-product/create-product.component'; 
 
 const routes: Routes = [
   {path: '', component: ProductsAvailableComponent },
   {path: 'products-available', component: ProductsAvailableComponent},
   {path: 'add-product', component: AddProductComponent},
-  {path: 'search-product', component: SearchPageComponent}
+  {path: 'search-product', component: SearchPageComponent},
+  /** Soukhee Lee */
+  {path: 'all-product', component: ListProductComponent},
+  {path: 'create-product', component: CreateProductComponent}
 ];
 
 @NgModule({
