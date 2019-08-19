@@ -30,6 +30,20 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit() {
 
+     //   newProduct = new product() {
+
+  //   english_description: '',
+  //   french_description: '',
+  //   brand_name_english: '',
+  //   brand_name_french: '',
+  //   type: '',
+  //   identification: '',
+  //   img_url: '',
+  //   status: '',
+  //   target_market: ''
+
+  // }
+
     // (function () {
     //   'use strict';
     //   window.addEventListener('load', function () {
@@ -48,15 +62,8 @@ export class AddProductComponent implements OnInit {
     //   }, false);
     // })();
 
-    /////////////////////////
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
 
-      //////////////
       english_description: ['', Validators.required],
       french_description: ['', Validators.required],
       brand_name_english: ['', Validators.required],
@@ -84,28 +91,15 @@ export class AddProductComponent implements OnInit {
     }
 
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+
+ 
   }
 
-  // newProduct: product = {
-
-  //   english_description: '',
-  //   french_description: '',
-  //   brand_name_english: '',
-  //   brand_name_french: '',
-  //   type: '',
-  //   identification: '',
-  //   img_url: '',
-  //   status: '',
-  //   target_market: ''
-
-  // }
+  
 
   addNewProduct() {
     // this.service.add(this.newProduct);
   }
-
-
-
 }
 
 

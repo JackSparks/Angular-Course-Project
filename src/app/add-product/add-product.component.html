@@ -67,7 +67,7 @@
       <input id="Product English*" type="text" class="form-control" required placeholder="Product English*" name="english_description">
     </div> -->
 
-    <!-- <div class="form-row">
+<!-- <div class="form-row">
       <input type="text" class="form-control" [(ngModel)]="french_description" required placeholder="Product French*" name="french_description">
     </div>
 
@@ -114,10 +114,10 @@
       </select>
     </div> -->
 
-    <!-- <div class="text-center"> -->
-      <!-- <button class="btn btn-outline-warning btn-sm btn-rounded" type="cancel">Cancel</button>
+<!-- <div class="text-center"> -->
+<!-- <button class="btn btn-outline-warning btn-sm btn-rounded" type="cancel">Cancel</button>
       &nbsp; -->
-      <!-- <button class="btn btn-outline-success btn-sm btn-rounded" type="submit" (submit)="addNewProduct()">Submit form</button>
+<!-- <button class="btn btn-outline-success btn-sm btn-rounded" type="submit" (submit)="addNewProduct()">Submit form</button>
     </div>
 
   </form>
@@ -125,7 +125,7 @@
 
 <!-- <div class="container"> -->
 
-  <!--The whole content below can be removed with the new code.-->
+<!--The whole content below can be removed with the new code.-->
 <!-- <div style="text-align:center">
   <h1>
     Welcome to {{title}}!!
@@ -153,11 +153,11 @@
 
 <div class="jumbotron">
   <div class="container">
-      <div class="row">
-          <div class="col-md-6 offset-md-3">
-              <h3>Add Products</h3>
-              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>Add Products</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <!-- <div class="form-group">
                       <label>First Name</label>
                       <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
                       <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
@@ -194,13 +194,96 @@
                           <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
                           <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
                       </div>
-                  </div>
-                  <div class="form-group">
-                      <button class="btn btn-primary">Register</button>
-                  </div>
-              </form>
+                  </div> -->
+
+          <!--  -->
+          <div class="form-group">
+            <label>English Description</label>
+            <input type="text" formControlName="english_description" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.english_description.errors }" />
+            <div *ngIf="submitted && f.english_description.errors" class="invalid-feedback">
+              <div *ngIf="f.english_description.errors.required">Last Name is required</div>
+            </div>
           </div>
+
+          <div class="form-group">
+            <label>French Description</label>
+            <input type="text" formControlName="french_description" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.french_description.errors }" />
+            <div *ngIf="submitted && f.french_description.errors" class="invalid-feedback">
+              <div *ngIf="f.french_description.errors.required">French Description is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>English brand name</label>
+            <input type="text" formControlName="brand_name_english" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.brand_name_english.errors }" />
+            <div *ngIf="submitted && f.brand_name_english.errors" class="invalid-feedback">
+              <div *ngIf="f.brand_name_english.errors.required">Brand Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>French brand nme</label>
+            <input type="text" formControlName="brand_name_french" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.brand_name_french.errors }" />
+            <div *ngIf="submitted && f.brand_name_french.errors" class="invalid-feedback">
+              <div *ngIf="f.brand_name_french.errors.required">French brand name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Product Type</label>
+            <input type="text" formControlName="type" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.type.errors }" />
+            <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+              <div *ngIf="f.type.errors.required">Product Type is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Identification</label>
+            <input type="text" formControlName="identification" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.identification.errors }" />
+            <div *ngIf="submitted && f.identification.errors" class="invalid-feedback">
+              <div *ngIf="f.identification.errors.required">Identification is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Img URL</label>
+            <input type="text" formControlName="img_url" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.img_url.errors }" />
+            <div *ngIf="submitted && f.img_url.errors" class="invalid-feedback">
+              <div *ngIf="f.img_url.errors.required">Img Url is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Status</label>
+            <input type="text" formControlName="status" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.status.errors }" />
+            <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+              <div *ngIf="f.status.errors.required">Status is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Target Market</label>
+            <input type="text" formControlName="target_market" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.target_market.errors }" />
+            <div *ngIf="submitted && f.target_market.errors" class="invalid-feedback">
+              <div *ngIf="f.target_market.errors.required">Target Market is required</div>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="form-group">
+            <button class="btn btn-primary">Register</button>
+          </div>
+        </form>
       </div>
+    </div>
   </div>
 </div>
-
