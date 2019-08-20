@@ -80,10 +80,12 @@ export class AddProductComponent implements OnInit, product {
     // alert(this.english_description + 'SUCCESS!! :-)\n\n')
     // console.log(this.english_description);
     // alert(newProduct.english_description+'SUCCESS!! :-)\n\n' )
-  }
-
-  addNewProduct() {
 
     this.service.add(this);
   }
+
+  // addNewProduct() {
+
+  //   this.service.add(this);
+  // }
 }
