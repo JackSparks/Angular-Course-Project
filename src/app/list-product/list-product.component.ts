@@ -9,14 +9,12 @@ import { ProductService, product } from "../services/product-service.service";
 })
 export class ListProductComponent implements OnInit {
 
-  // DisplayProducts:ProductService[];
   Products: any[];
 
   constructor(
     private service: ProductService,
     private httpClientService:HttpClientService
   ) { 
-    // this.Products.push( service.get() );
     this.Products = service.get();
   }
 
