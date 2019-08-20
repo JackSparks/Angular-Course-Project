@@ -155,7 +155,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <h3>Add Products</h3>
+        <h3 >Add Products</h3>
+        
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <!-- <div class="form-group">
                       <label>First Name</label>
@@ -199,10 +200,10 @@
           <!--  -->
           <div class="form-group">
             <label>English Description</label>
-            <input type="text" formControlName="english_description" class="form-control"
+            <input type="text" [(ngModel)]="english_description" formControlName="english_description" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.english_description.errors }" />
             <div *ngIf="submitted && f.english_description.errors" class="invalid-feedback">
-              <div *ngIf="f.english_description.errors.required">Last Name is required</div>
+              <div *ngIf="f.english_description.errors.required">English Description is required</div>
             </div>
           </div>
 
@@ -225,7 +226,7 @@
           </div>
 
           <div class="form-group">
-            <label>French brand nme</label>
+            <label>French brand name</label>
             <input type="text" formControlName="brand_name_french" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.brand_name_french.errors }" />
             <div *ngIf="submitted && f.brand_name_french.errors" class="invalid-feedback">

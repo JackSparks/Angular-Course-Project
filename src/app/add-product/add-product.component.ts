@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService, product } from "../services/product-service.service";
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MustMatch } from '../_helpers/must-match.validator';
+import { Product } from '../service/http-client.service';
 
 
 @Component({
@@ -10,12 +11,23 @@ import { MustMatch } from '../_helpers/must-match.validator';
   styleUrls: ['./add-product.component.css']
 })
 
-export class AddProductComponent implements OnInit {
+export class AddProductComponent implements OnInit, product {
+
+  english_description: "";
+  french_description: "";
+  brand_name_english: "";
+  brand_name_french: "";
+  type: "";
+  identification: "";
+  img_url: "";
+  status: "";
+  target_market: "";
+
 
   registerForm: FormGroup;
   submitted = false;
 
-  title = 'Add Product';
+  // title = 'Add Product';
   angForm: FormGroup;
 
   createForm() {
@@ -26,41 +38,10 @@ export class AddProductComponent implements OnInit {
 
   constructor(private service: ProductService, private fb: FormBuilder, private formBuilder: FormBuilder) {
     this.createForm();
+
   }
 
   ngOnInit() {
-
-     //   newProduct = new product() {
-
-  //   english_description: '',
-  //   french_description: '',
-  //   brand_name_english: '',
-  //   brand_name_french: '',
-  //   type: '',
-  //   identification: '',
-  //   img_url: '',
-  //   status: '',
-  //   target_market: ''
-
-  // }
-
-    // (function () {
-    //   'use strict';
-    //   window.addEventListener('load', function () {
-    //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    //     var forms = document.getElementsByClassName('needs-validation');
-    //     // Loop over them and prevent submission
-    //     var validation = Array.prototype.filter.call(forms, function (form) {
-    //       form.addEventListener('submit', function (event) {
-    //         if (form.checkValidity() === false) {
-    //           event.preventDefault();
-    //           event.stopPropagation();
-    //         }
-    //         form.classList.add('was-validated');
-    //       }, false);
-    //     });
-    //   }, false);
-    // })();
 
     this.registerForm = this.formBuilder.group({
 
@@ -72,7 +53,8 @@ export class AddProductComponent implements OnInit {
       identification: ['', Validators.required],
       img_url: ['', Validators.required],
       status: ['', Validators.required],
-      target_market: ['', Validators.required]
+      target_market: ['', Validators.required],
+
     }, {
         // validator: MustMatch('password', 'confirmPassword')
       });
@@ -90,49 +72,18 @@ export class AddProductComponent implements OnInit {
       return;
     }
 
+    console.log(this.english_description);
+
+    console.log(this.english_description + "   -> class english description");
+
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
-
- 
+    // alert(this.english_description + 'SUCCESS!! :-)\n\n')
+    // console.log(this.english_description);
+    // alert(newProduct.english_description+'SUCCESS!! :-)\n\n' )
   }
-
-  
 
   addNewProduct() {
-    // this.service.add(this.newProduct);
+
+    this.service.add(this);
   }
 }
-
-
-
-
-
-  // newProduct: product;
-
-
-    // english_description: string;
-    // french_description: string;
-    // brand_name_english: string;
-    // brand_name_french: string;
-    // type: string;
-    // identification: string;
-    // img_url: string;
-    // status: string;
-
-
-  // addNewProduct() {
-  //   const newProduct = <product>{
-  //     english_description : document.getElementById("product_description_english").value,
-  //     french_description : document.getElementById("product_description_french").value,
-  //     brand_name_english : document.getElementById("brand_name_english").value,
-  //     brand_french_english : document.getElementById("brand_name_french").value,
-  //     type : document.getElementById("type").value,
-  //     identification : document.getElementById("identification").value,
-  //     img_url : document.getElementById("img_url").value,
-  //     status : document.getElementById("status").value
-  //   }
-
-  //   ProductService.add(newProduct);
-
-  // }
-
-// }
